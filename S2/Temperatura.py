@@ -5,7 +5,7 @@ from typing import Tuple
 def convert_temperature(value: float, scale: str) -> Tuple[float, str]:
     try:
         if scale not in ['C', 'F']:
-            raise ValueError("Scale must be 'C' for Celsius or 'F' for Fahrenheit.")
+            raise ValueError("Scale must be Celsius(C) or Fahrenheit(F).")
         if type(value) is not int:
             raise ValueError("the value is no a intenger or float")
         

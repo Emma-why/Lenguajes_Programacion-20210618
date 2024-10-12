@@ -2,8 +2,6 @@ import hashlib
 from typing import Optional
 
 def validar_contrasena(contrasena: str) -> Optional[str]:
-
-    # Definir criterios de validación
     if len(contrasena) < 8:
         raise ValueError("La contraseña debe tener al menos 8 caracteres.")
     if not any(c.isupper() for c in contrasena):
