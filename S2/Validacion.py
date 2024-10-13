@@ -1,4 +1,5 @@
 import hashlib
+import pprint
 from typing import Optional
 
 def validar_contrasena(contrasena: str) -> Optional[str]:
@@ -16,12 +17,12 @@ def validar_contrasena(contrasena: str) -> Optional[str]:
 
 try:
     resultado = validar_contrasena("Password123")
-    print(resultado)
+    pprint.pprint(resultado)
 except ValueError as e:
     print(e)
 
 try:
     resultado2 = validar_contrasena("pass")
-    print(resultado2)
+    pprint.pprint(resultado2)
 except ValueError as e:
     print(e)
