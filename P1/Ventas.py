@@ -9,7 +9,7 @@ def analizar_ventas(archivo_ventas: str) -> Tuple[np.ndarray, float]:
     except FileNotFoundError:
         raise FileNotFoundError(f"El archivo '{archivo_ventas}' no fue encontrado.")
     except pd.errors.EmptyDataError:
-        raise ValueError("El archivo está vacío.")
+        raise ValueError("El archivo está vacio.")
     
     try:
         ventas_df['Fecha'] = pd.to_datetime(ventas_df['Fecha'])
@@ -30,7 +30,7 @@ def analizar_ventas(archivo_ventas: str) -> Tuple[np.ndarray, float]:
     except KeyError as e:
         raise KeyError(f"Error de clave: {e}")
     except Exception as e:
-        raise RuntimeError(f"Error inesperado durante el análisis de ventas: {e}")
+        raise RuntimeError(f"Error inesperado durante el analisis de ventas: {e}")
 
     return ventas_por_producto, ventas_marzo_producto, promedio_ventas_marzo
 try:

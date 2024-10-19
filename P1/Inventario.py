@@ -9,7 +9,7 @@ def analizar_inventario(archivo: str) -> Tuple[np.ndarray, pd.DataFrame]:
     except FileNotFoundError:
         raise FileNotFoundError(f"El archivo '{archivo}' no fue encontrado.")
     except pd.errors.EmptyDataError:
-        raise ValueError("El archivo está vacío.")
+        raise ValueError("El archivo esta vacio.")
     
     try:
 
@@ -27,7 +27,7 @@ def analizar_inventario(archivo: str) -> Tuple[np.ndarray, pd.DataFrame]:
     except KeyError as e:
         raise KeyError(f"Error de clave: {e}")
     except Exception as e:
-        raise RuntimeError(f"Error inesperado durante el análisis del inventario: {e}")
+        raise RuntimeError(f"Error inesperado durante el analisis del inventario: {e}")
 
     return valores_inventario, productos_reabastecer
 
