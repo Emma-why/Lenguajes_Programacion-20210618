@@ -3,11 +3,11 @@ import numpy as np
 from pprint import pprint
 from typing import Tuple, Any
 
-def analizar_ventas(archivo_ventas: str) -> Tuple[np.ndarray, float]:
+def analizar_ventas(archivo: str) -> Tuple[np.ndarray, float]:
     try:
-        ventas_df = pd.read_csv(archivo_ventas)
+        ventas_df = pd.read_csv(archivo)
     except FileNotFoundError:
-        raise FileNotFoundError(f"El archivo '{archivo_ventas}' no fue encontrado.")
+        raise FileNotFoundError(f"El archivo '{archivo}' no fue encontrado.")
     except pd.errors.EmptyDataError:
         raise ValueError("El archivo está vacio.")
     
