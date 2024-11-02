@@ -18,7 +18,7 @@ def analizar_inventario(archivo: str) -> Tuple[np.ndarray, pd.DataFrame]:
 
         inventario_df['Valor total en inventario'] = inventario_df['Cantidad'] * inventario_df['Precio unitario']
 
-        valores_inventario = inventario_df['Valor total en inventario'].values
+        valores_inventario = inventario_df['Valor total en inventario']
 
         cantidad_reabastecer = 50 - inventario_df['Cantidad']
         inventario_df['Costo reabastecimiento'] = np.where(inventario_df['Cantidad'] < 20, cantidad_reabastecer * inventario_df['Costo de reabastecimiento'], 0)
